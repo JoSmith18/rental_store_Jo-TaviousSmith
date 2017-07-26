@@ -1,8 +1,4 @@
 def give_brand(menu, brand):
-    """ [{}], '' -> ['']
-    >>> give_brand([{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Sold': 0}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Sold': 0}], 'Marvel')
-    'Character: IronMan, Price: 85.00\n'
-    """
     characters = ''
     for item in menu:
         if item["Brand"] == brand:
@@ -24,5 +20,17 @@ def add_rental_fee(time,characters,menu):
     return price
 
 def add_tax(price):
-    price * .07
+    return price * .07
+
+def change_inventory(characters, menu):
+    for item in menu:
+        if characters == item["Character"]:
+            item["Stock"] -= 1
+            item["Rented"] += 1
+    return (menu)
+      
+        
+            
+        
+
     

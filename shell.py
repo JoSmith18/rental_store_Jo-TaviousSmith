@@ -30,7 +30,9 @@ def main():
 
     print(price)
 
-    
+    new_menu = change_inventory(characters,menu)
+
+    update_inventory(new_menu)
 
 
 if __name__ == '__main__':
