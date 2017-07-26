@@ -35,6 +35,13 @@ def verify_brand(validbrand, brand):
     else:
         return False
 
+def verify_characters(menu, characters):
+    for item in menu:
+        if characters == item["Character"]:
+            return True
+        else:
+            return False
+
       
         
             

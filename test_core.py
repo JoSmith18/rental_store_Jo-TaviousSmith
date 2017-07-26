@@ -18,3 +18,7 @@ def test_change_inventory():
 def test_verify_brand():
     assert verify_brand({'Marvel', 'Disney', 'SpongeBob'}, 'D.C') == False
     assert verify_brand({'Marvel', 'Disney', 'SpongeBob'}, 'Disney') == True
+
+def test_verify_characters():
+    assert verify_characters([{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 3, 'Price': 85.00, 'Rented': 1}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Rented': 0}], 'Batman') == False
+    assert verify_characters([{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 3, 'Price': 85.00, 'Rented': 1}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Rented': 0}], 'IronMan') == True
