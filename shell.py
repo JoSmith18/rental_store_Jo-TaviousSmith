@@ -1,6 +1,15 @@
 from disk import *
 from core import *
 
+def true_brand(menu):
+    while True:
+        brand = input('What Brand Would You Like To Choose From?\n\n')
+        valid_brand = (selection_of_brand(menu))
+        if verify_brand(valid_brand, brand):
+            return brand
+        else:
+            print('Invalid Brand')
+
 def main():
 
     print("\tHello Welcome To The Best Character Rental\n   Our Characters Are Guranteed To Rock The Kids Mental")
@@ -11,7 +20,8 @@ def main():
 
     print(selection_of_brand(menu))
 
-    brand = input('What Brand Would You Like To Choose From?\n\n')
+    brand = true_brand(menu)
+
 
     selection = give_brand(menu, brand)
 
@@ -33,6 +43,8 @@ def main():
     new_menu = change_inventory(characters,menu)
 
     update_inventory(new_menu)
+
+    answer = input("Is That The Only Character\n")
 
 
 if __name__ == '__main__':

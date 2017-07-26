@@ -13,4 +13,8 @@ def test_add_tax():
     assert add_tax(70) == 4.9
 
 def test_change_inventory():
-    assert change_inventory('IronMan', [{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Sold': 0}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Sold': 0}]) == [{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 3, 'Price': 85.00, 'Sold': 1}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Sold': 0}]
+    assert change_inventory('IronMan', [{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Rented': 0}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Rented': 0}]) == [{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 3, 'Price': 85.00, 'Rented': 1}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Rented': 0}]
+
+def test_verify_brand():
+    assert verify_brand({'Marvel', 'Disney', 'SpongeBob'}, 'D.C') == False
+    assert verify_brand({'Marvel', 'Disney', 'SpongeBob'}, 'Disney') == True

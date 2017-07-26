@@ -28,6 +28,13 @@ def change_inventory(characters, menu):
             item["Stock"] -= 1
             item["Rented"] += 1
     return (menu)
+
+def verify_brand(validbrand, brand):
+    if brand in validbrand:
+        return True
+    else:
+        return False
+
       
         
             
