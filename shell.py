@@ -1,16 +1,21 @@
 from disk import *
 from core import *
 
-print("\tHello Welcome To The Best Character Rental\n   Our Characters Are Guranteed To Rock The Kids Mental")
+def main():
 
-input()
+    print("\tHello Welcome To The Best Character Rental\n   Our Characters Are Guranteed To Rock The Kids Mental")
 
-menu = loadinventory()
+    input()
 
-print(selection_of_brand(menu))
+    menu = loadinventory()
 
-brand = input('What Brand Would You Like To Choose From?\n\n')
+    print(selection_of_brand(menu))
 
-selection = give_brand(menu, brand)
+    brand = input('What Brand Would You Like To Choose From?\n\n')
 
-purchase = input('\n{}\t*Price Per Hour*'.format(selection))
+    selection = give_brand(menu, brand)
+
+    characters = input('\n\tWhat Character Would You Like?\n{}\t*Price Per Hour*\n'.format(selection))
+
+if __name__ == '__main__':
+    main()
