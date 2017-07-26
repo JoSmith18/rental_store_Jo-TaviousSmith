@@ -1,0 +1,10 @@
+Brand, Character, Stock, Price, Amount-Sold
+Marvel, SpiderMan, 3, 85.00, 0
+Marvel, Hulk, 1, 90.00, 0
+Marvel, IronMan, 4, 85.00, 0
+Disney, MickeyMouse, 11, 65.00, 0
+Disney, MinnieMouse, 7, 50.00, 0
+Disney, Cinderella, 4, 45.00, 0
+SpongeBob, SpongeBob, 2, 110.00, 0
+SpongeBob, Patrick, 1, 95.00, 0
+SpongeBob, Squidward, 1, 95.00, 0
