@@ -8,3 +8,4 @@ def loadinventory():
         dictionary = {key_1: Brand, key_2: Character, key_3: float(Stock), key_4: float(Price), key_5: float(Sold)}
         menu.append(dictionary)
     return menu
+

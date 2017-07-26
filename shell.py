@@ -7,6 +7,10 @@ input()
 
 menu = loadinventory()
 
-brand = input('What Brand Would You Like To Choose From?\n')
+print(selection_of_brand(menu))
 
-print(give_brand(menu, brand))
+brand = input('What Brand Would You Like To Choose From?\n\n')
+
+selection = give_brand(menu, brand)
+
+purchase = input('\n{}\t*Price Per Hour*'.format(selection))
