@@ -10,9 +10,19 @@ def give_brand(menu, brand):
     return characters
 
 def selection_of_brand(menu):
-    """ [{}] -> ''
+    """ [{}] -> set()
     """
     brand = set()
     for item in menu:
         brand.add(item["Brand"])
     return brand
+
+def add_rental_fee(time,characters,menu):
+    for item in menu:
+        if item["Character"] == characters:
+             price = item["Price"] * time
+    return price
+
+def add_tax(price):
+    price * .07
+    

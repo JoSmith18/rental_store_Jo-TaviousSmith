@@ -17,5 +17,21 @@ def main():
 
     characters = input('\n\tWhat Character Would You Like?\n{}\t*Price Per Hour*\n'.format(selection))
 
+    times = ''' Our Times Are:
+     \t1. 1hr
+\t2. 2hr
+\t3. 3hr
+\t4. 4hr
+                '''
+    print('How Long Do You Want To Rent The Character')
+    time = float(input(times))
+    
+    price = add_rental_fee(time, characters, menu)
+
+    print(price)
+
+    
+
+
 if __name__ == '__main__':
     main()
