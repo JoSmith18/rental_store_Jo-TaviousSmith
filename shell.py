@@ -34,6 +34,13 @@ def valid_time():
             return time
         else:
             print("We Can\'t Allow That Time, Pick Another One")
+def valid_choice():
+    while True:
+        decision = input("\tAre You:\nRenting or Returning?\n")
+        if decision.strip().title() == 'Renting'.strip().title() or decision.strip().title() == 'Returning'.strip().title():
+            return decision
+        else:
+            print("Sorry Pick Again")
     
 def main():
 
@@ -41,7 +48,7 @@ def main():
 
     input()
 
-    decision = input("\tAre You:\nRenting or Returning?\n")
+    decision = valid_choice()
     
     if decision.strip().title() == 'Renting'.strip().title():
 
@@ -59,15 +66,20 @@ def main():
 
         update_inventory(new_menu)
 
-        answer = input("Is That The Only Character\n")
-
         tax = round(add_tax(price), 2)
         deposit = find_deposit(characters, menu)
         new_cost = tax + price + deposit
         print("That\'ll Be:\n Brand: {}\n Character: {}\n Time: {}hr\n Deposit: {}\n Price: {}\n Tax: {}\n Total: {:.2f}".format(brand, characters, int(time), deposit, price, tax, new_cost))
     
     elif decision.strip().title() == 'Returning'.strip().title():
-        
+        character = input("\nWhat Character Are You Returning?\n")
+        menu = loadinventory()
+        new_menu = add_into_stock(character,menu)
+        update_inventory(new_menu)
+        deposit = find_deposit(character, menu)
+        print("You\'re deposit was {:.2f} here is it back".format(deposit))
+
+        print('\nThank You Please Rent With Us Again!')
 
 if __name__ == '__main__':
     main()

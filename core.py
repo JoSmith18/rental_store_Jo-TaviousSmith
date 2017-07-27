@@ -40,6 +40,12 @@ def find_deposit(characters,menu):
         if characters == item["Character"]:
             return item["Value"] * .10
 
+def add_into_stock(character, menu):
+    for item in menu:
+        if character == item["Character"]:
+            item["Stock"] += 1
+    return menu
+
 
       
         
