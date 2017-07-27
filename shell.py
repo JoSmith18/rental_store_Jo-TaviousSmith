@@ -96,15 +96,17 @@ def employee_main():
    
     elif actions.strip() == '2'.strip():
         
-        character = input("What Character Would You Like To Restock?/n")
+        character = input("What Character Would You Like To Restock?\n")
         
         menu = loadinventory()
         
-        num = int(input("How Many Will You Add"))
+        num = int(input("How Many Will You Add\n"))
+
+        new_menu = restock_character(character, menu, num)
         
-        update_inventory(menu)
+        update_inventory(new_menu)
         
-        print("The Action Was Completed?")
+        print("The Action Was Completed")
     
     elif actions.strip() == '3'.strip():
         

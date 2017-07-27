@@ -57,7 +57,7 @@ def add_into_stock(character, menu):
 def restock_character(character, menu, num):
     for item in menu:
         if character == item["Character"]:
-            item["Stock"] += num
+            item["Stock"] += int(num)
     return menu
 
 
