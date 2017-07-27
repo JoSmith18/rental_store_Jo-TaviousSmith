@@ -41,29 +41,32 @@ def main():
 
     input()
 
-    menu = loadinventory()
-   
-    brand = true_brand(menu)
-
-    characters = true_character(menu, brand)
-
-    time = valid_time()
-
-    price = add_rental_fee(time, characters, menu)
-
+    decision = input("\tAre You:\nRenting or Returning?\n")
     
+    if decision.strip().title() == 'Renting'.strip().title():
 
-    new_menu = change_inventory(characters,menu)
-
-    update_inventory(new_menu)
-
-    answer = input("Is That The Only Character\n")
-
-    tax = round(add_tax(price), 2)
-    deposit = find_deposit(characters, menu)
-    new_cost = tax + price + deposit
-    print("That\'ll Be:\n Brand: {}\n Character: {}\n Time: {}hr\n Deposit: {}\n Price: {}\n Tax: {}\n Total: {:.2f}".format(brand, characters, int(time), deposit, price, tax, new_cost))
+        menu = loadinventory()
     
+        brand = true_brand(menu)
+
+        characters = true_character(menu, brand)
+
+        time = valid_time()
+
+        price = add_rental_fee(time, characters, menu)
+        
+        new_menu = change_inventory(characters,menu)
+
+        update_inventory(new_menu)
+
+        answer = input("Is That The Only Character\n")
+
+        tax = round(add_tax(price), 2)
+        deposit = find_deposit(characters, menu)
+        new_cost = tax + price + deposit
+        print("That\'ll Be:\n Brand: {}\n Character: {}\n Time: {}hr\n Deposit: {}\n Price: {}\n Tax: {}\n Total: {:.2f}".format(brand, characters, int(time), deposit, price, tax, new_cost))
+    
+    elif decision.strip().title() == 'Returning'.strip().title():
         
 
 if __name__ == '__main__':
