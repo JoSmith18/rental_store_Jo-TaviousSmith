@@ -27,3 +27,6 @@ def test_add_into_stock():
 
 def test_restock_character():
     assert restock_character("IronMan", [{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 3, 'Price': 85.00, 'Rented': 1, 'Value': 430}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 230}], 10) == [{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 13, 'Price': 85.00, 'Rented': 1, 'Value': 430}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 230}]
+
+def test_get_history():
+    assert get_history('IronMan', [{'Character': 'IronMan', 'Time': 3, 'Total': 335.50}]) == [{'Character': 'IronMan', 'Time': 3, 'Total': 335.50}]

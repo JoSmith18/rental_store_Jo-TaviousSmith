@@ -34,7 +34,7 @@ def valid_time():
             return time
         else:
             print("We Can\'t Allow That Time, Pick Another One")
-def valid_choice():
+def valid_decision():
     while True:
         decision = input("\tAre You:\nRenting or Returning?\n")
         if decision.strip().title() == 'Renting'.strip().title() or decision.strip().title() == 'Returning'.strip().title():
@@ -46,7 +46,7 @@ def customer_main():
 
     input()
 
-    decision = valid_choice()
+    decision = valid_decision()
     
     if decision.strip().title() == 'Renting'.strip().title():
 
@@ -88,8 +88,20 @@ def customer_main():
 def employee_main():
     name = input("Hello, What Is Your Name For Security Purposes\n")
 
-    actions = input("\nWhat Action Would You Like To Take:\n 1. Transaction History\n 2. Restock\n")
+    actions = input("\nWhat Action Would You Like To Take:\n 1. All Transaction History\n 2. Restock\n 3. Character Transaction History\n")
 
+    if actions.strip() == '1'.strip():
+        print(open_history())
+    elif actions.strip() == '2'.strip():
+        character = input("What Character Would You Like To Restock?/n")
+        menu = loadinventory()
+        num = int(input("How Many Will You Add"))
+        update_inventory(menu)
+        print("The Action Was Completed?")
+    elif actions.strip() == '3'.strip():
+        character = input("What Character Would You Like To Look Up?\n")
+        history = load_history()
+        print(get_history(character,history))
     
 
 

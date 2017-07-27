@@ -19,3 +19,19 @@ def update_inventory(menu):
 def log_history(Characters, time, total):
     with open("history.txt", "a") as history:
         history.write('\n{}, {}hr, {:.2f}'.format(Characters, time, total))
+
+def open_history():
+    with open("history.txt", "r") as log:
+        history = log.read()
+    return history
+
+def load_history():
+    with open("history.txt", "r") as log:
+        key_1, key_2, key_3 = log.readline().strip().split(', ')
+        history = log.readlines()
+    loaded = []
+    for item in history:
+        Character, Time, Total = item.strip().split(', ')
+        dictionary = {key_1: Character, key_2: int(Time), key_3: float(Total)}
+        loaded.append(dictionary)
+    return loaded 

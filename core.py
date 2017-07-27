@@ -19,6 +19,14 @@ def add_rental_fee(time,characters,menu):
              price = item["Price"] * time
     return price
 
+def get_history(character, history):
+    character_history = []
+    for item in history:
+        if character == item["Character"] :
+            character_history.append(item)
+    return character_history
+
+
 def add_tax(price):
     return price * .07
 
