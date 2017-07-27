@@ -14,10 +14,28 @@ def true_character(menu,brand):
     while True:
         selection = give_brand(menu, brand)
         characters = input('\n\tWhat Character Would You Like?\n{}\t*Price Per Hour*\n'.format(selection))
-        if verify_characters(menu, characters):
-            return characters
+        for item in menu:
+            if characters == item["Character"]:
+                return characters
         else:
             print('Invalid Character')
+
+def valid_time():
+    times = ''' Our Times Are:
+     \t1. 1hr
+\t2. 2hr
+\t3. 3hr
+\t4. 4hr
+                '''
+    print('How Long Do You Want To Rent The Character')
+    while True:
+        time = float(input(times))
+        if time == 1 or time == 2 or time ==3 or time == 4:
+            return time
+        else:
+            print("We Can\'t Allow That Time, Pick Another One")
+    
+    
 def main():
 
     print("\tHello Welcome To The Best Character Rental\n   Our Characters Are Guranteed To Rock The Kids Mental")
@@ -30,15 +48,8 @@ def main():
 
     characters = true_character(menu, brand)
 
-    times = ''' Our Times Are:
-     \t1. 1hr
-\t2. 2hr
-\t3. 3hr
-\t4. 4hr
-                '''
-    print('How Long Do You Want To Rent The Character')
-    time = float(input(times))
-    
+    time = valid_time()
+
     price = add_rental_fee(time, characters, menu)
 
     print(price)

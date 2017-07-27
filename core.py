@@ -1,7 +1,7 @@
 def give_brand(menu, brand):
     characters = ''
     for item in menu:
-        if item["Brand"] == brand:
+        if item["Brand"] == brand and item["Stock"] >= 1:
             characters += ('Character: {}, Price: {:.2f}\n'.format(item["Character"], item["Price"]))
     return characters
 
@@ -35,12 +35,6 @@ def verify_brand(validbrand, brand):
     else:
         return False
 
-def verify_characters(menu, characters):
-    for item in menu:
-        if characters == item["Character"]:
-            return True
-        else:
-            return False
 
       
         
