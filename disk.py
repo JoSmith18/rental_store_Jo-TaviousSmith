@@ -1,3 +1,4 @@
+from datetime import *
 def loadinventory():
     with open("inventory.txt", "r") as inventory:
         key_1, key_2, key_3, key_4, key_5, key_6 = inventory.readline().strip().split(', ')
@@ -16,9 +17,14 @@ def update_inventory(menu):
     with open("inventory.txt", "w") as files:
         files.write(message)
 
-def log_history(Characters, time, total):
+def log_rental(Characters, time, total):
     with open("history.txt", "a") as history:
         history.write('\n{}, {}hr, {:.2f}'.format(Characters, time, total))
+
+def log_return(character, deposit):
+    with open("history.txt", "a") as history:
+        today = datetime.now()
+        history.write('\n{}, {}, -{}'.format(character, today.strftime('%H:%M:%S'), deposit))
 
 def open_history():
     with open("history.txt", "r") as log:

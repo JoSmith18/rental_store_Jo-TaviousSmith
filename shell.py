@@ -68,7 +68,7 @@ def customer_main():
         deposit = find_deposit(characters, menu)
         new_cost = tax + price + deposit
         print("That\'ll Be:\n Brand: {}\n Character: {}\n Time: {}hr\n Deposit: {}\n Price: {}\n Tax: {}\n Total: {:.2f}".format(brand, characters, int(time), deposit, price, tax, new_cost))
-        log_history(characters, time, new_cost)
+        log_rental(characters, time, new_cost)
     
     elif decision.strip().title() == 'Returning'.strip().title():
         character = input("\nWhat Character Are You Returning?\n")
@@ -84,23 +84,34 @@ def customer_main():
         print("You\'re deposit was {:.2f} here is it back".format(deposit))
 
         print('\nThank You Please Rent With Us Again!')
-        
+        log_return(character, deposit)
 def employee_main():
     name = input("Hello, What Is Your Name For Security Purposes\n")
 
     actions = input("\nWhat Action Would You Like To Take:\n 1. All Transaction History\n 2. Restock\n 3. Character Transaction History\n")
 
     if actions.strip() == '1'.strip():
+        
         print(open_history())
+   
     elif actions.strip() == '2'.strip():
+        
         character = input("What Character Would You Like To Restock?/n")
+        
         menu = loadinventory()
+        
         num = int(input("How Many Will You Add"))
+        
         update_inventory(menu)
+        
         print("The Action Was Completed?")
+    
     elif actions.strip() == '3'.strip():
+        
         character = input("What Character Would You Like To Look Up?\n")
+        
         history = load_history()
+        
         print(get_history(character,history))
     
 
