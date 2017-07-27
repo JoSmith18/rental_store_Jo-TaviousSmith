@@ -15,3 +15,7 @@ def update_inventory(menu):
         message += '{}, {}, {}, {:.2f}, {}, {:.2f}\n'.format(item["Brand"], item["Character"], int(item["Stock"]), float(item["Price"]), int(item["Rented"]), float(item["Value"]))
     with open("inventory.txt", "w") as files:
         files.write(message)
+
+def log_history(Characters, time, total):
+    with open("history.txt", "a") as history:
+        history.write('\n{}, {}hr, {:.2f}'.format(Characters, time, total))

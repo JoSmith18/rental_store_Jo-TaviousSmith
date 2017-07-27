@@ -24,3 +24,6 @@ def test_find_deposit():
 
 def test_add_into_stock():
     assert add_into_stock('IronMan',[{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 3, 'Price': 85.00, 'Rented': 1, 'Value': 430}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 230}]) == [{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Rented': 1, 'Value': 430}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 230}]
+
+def test_restock_character():
+    assert restock_character("IronMan", [{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 3, 'Price': 85.00, 'Rented': 1, 'Value': 430}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 230}], 10) == [{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 13, 'Price': 85.00, 'Rented': 1, 'Value': 430}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 230}]

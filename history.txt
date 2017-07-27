@@ -1,0 +1,2 @@
+Character, Time, Total
+Hulk, 2.0hr, 238.60
