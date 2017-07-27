@@ -68,6 +68,7 @@ def customer_main():
         deposit = find_deposit(characters, menu)
         new_cost = tax + price + deposit
         print("That\'ll Be:\n Brand: {}\n Character: {}\n Time: {}hr\n Deposit: {}\n Price: {}\n Tax: {}\n Total: {:.2f}".format(brand, characters, int(time), deposit, price, tax, new_cost))
+        log_history(characters, time, new_cost)
     
     elif decision.strip().title() == 'Returning'.strip().title():
         character = input("\nWhat Character Are You Returning?\n")
@@ -83,9 +84,22 @@ def customer_main():
         print("You\'re deposit was {:.2f} here is it back".format(deposit))
 
         print('\nThank You Please Rent With Us Again!')
+        
+def employee_main():
+    name = input("Hello, What Is Your Name For Security Purposes\n")
+
+    actions = input("\nWhat Action Would You Like To Take:\n 1. Transaction History\n 2. Restock\n")
+
+    
 
 
 def main():
+    choice = input("Are You an Employee or Customer?\n")
+    if choice.strip().title() == "Employee".strip().title():
+        employee_main()
+    elif choice.strip().title() == "Customer".strip().title():
+        customer_main()
+
 
      
 
