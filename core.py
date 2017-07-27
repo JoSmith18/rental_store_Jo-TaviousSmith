@@ -2,7 +2,7 @@ def give_brand(menu, brand):
     characters = ''
     for item in menu:
         if item["Brand"] == brand and item["Stock"] >= 1:
-            characters += ('Character: {}, Price: {:.2f}\n'.format(item["Character"], item["Price"]))
+            characters += ('Character: {}, Deposit: {}, Price: {:.2f}\n'.format(item["Character"], (item["Value"] * .10), item["Price"]))
     return characters
 
 def selection_of_brand(menu):
@@ -34,6 +34,11 @@ def verify_brand(validbrand, brand):
         return True
     else:
         return False
+
+def find_deposit(characters,menu):
+    for item in menu:
+        if characters == item["Character"]:
+            return item["Value"] * .10
 
 
       

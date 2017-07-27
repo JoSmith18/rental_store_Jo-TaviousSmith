@@ -1,7 +1,7 @@
 from core import *
 
 def test_give_brand():
-    assert give_brand([{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Sold': 0}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Sold': 0}], 'Marvel') == 'Character: IronMan, Price: 85.00\n'
+    assert give_brand([{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 430}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Sold': 0}], 'Marvel') == 'Character: IronMan, Deposit: 43.0, Price: 85.00\n'
 
 def test_selection_of_brand():
     assert selection_of_brand([{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Sold': 0}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Sold': 0}]) == {'Marvel', 'Disney'}
@@ -18,3 +18,6 @@ def test_change_inventory():
 def test_verify_brand():
     assert verify_brand({'Marvel', 'Disney', 'SpongeBob'}, 'D.C') == False
     assert verify_brand({'Marvel', 'Disney', 'SpongeBob'}, 'Disney') == True
+
+def test_find_deposit():
+    assert find_deposit('IronMan', [{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 3, 'Price': 85.00, 'Rented': 1, 'Value': 430}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 230}]) == 430 * .10

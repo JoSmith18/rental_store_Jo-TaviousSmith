@@ -1,10 +1,10 @@
 Brand, Character, Stock, Price, Rented, Value
-Marvel, SpiderMan, 11, 85.00, 0, 380.00
+Marvel, SpiderMan, 10, 85.00, 1, 380.00
 Marvel, Hulk, 12, 90.00, 5, 460.00
-Marvel, IronMan, 3, 85.00, 1, 430.00
-Disney, MickeyMouse, 10, 65.00, 1, 380.00
-Disney, MinnieMouse, 7, 50.00, 0, 320.00
+Marvel, IronMan, 1, 85.00, 3, 430.00
+Disney, MickeyMouse, 9, 65.00, 2, 380.00
+Disney, MinnieMouse, 6, 50.00, 1, 320.00
 Disney, Cinderella, 2, 45.00, 2, 210.00
-SpongeBob, SpongeBob, 2, 110.00, 0, 440.00
+SpongeBob, SpongeBob, 1, 110.00, 1, 440.00
 SpongeBob, Patrick, 0, 95.00, 1, 360.00
 SpongeBob, Squidward, 0, 95.00, 1, 400.00

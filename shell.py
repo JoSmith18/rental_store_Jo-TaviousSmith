@@ -35,7 +35,6 @@ def valid_time():
         else:
             print("We Can\'t Allow That Time, Pick Another One")
     
-    
 def main():
 
     print("\tHello Welcome To The Best Character Rental\n   Our Characters Are Guranteed To Rock The Kids Mental")
@@ -52,7 +51,7 @@ def main():
 
     price = add_rental_fee(time, characters, menu)
 
-    print(price)
+    
 
     new_menu = change_inventory(characters,menu)
 
@@ -60,6 +59,12 @@ def main():
 
     answer = input("Is That The Only Character\n")
 
+    tax = round(add_tax(price), 2)
+    deposit = find_deposit(characters, menu)
+    new_cost = tax + price + deposit
+    print("That\'ll Be:\n Brand: {}\n Character: {}\n Time: {}hr\n Deposit: {}\n Price: {}\n Tax: {}\n Total: {:.2f}".format(brand, characters, int(time), deposit, price, tax, new_cost))
+    
+        
 
 if __name__ == '__main__':
     main()
