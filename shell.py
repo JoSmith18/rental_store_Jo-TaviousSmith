@@ -41,9 +41,7 @@ def valid_choice():
             return decision
         else:
             print("Sorry Pick Again")
-    
-def main():
-
+def customer_main():
     print("\tHello Welcome To The Best Character Rental\n   Our Characters Are Guranteed To Rock The Kids Mental")
 
     input()
@@ -73,13 +71,23 @@ def main():
     
     elif decision.strip().title() == 'Returning'.strip().title():
         character = input("\nWhat Character Are You Returning?\n")
+        
         menu = loadinventory()
+        
         new_menu = add_into_stock(character,menu)
+        
         update_inventory(new_menu)
+        
         deposit = find_deposit(character, menu)
+        
         print("You\'re deposit was {:.2f} here is it back".format(deposit))
 
         print('\nThank You Please Rent With Us Again!')
+
+
+def main():
+
+     
 
 if __name__ == '__main__':
     main()
