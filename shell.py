@@ -63,11 +63,11 @@ def customer_main():
         new_menu = change_inventory(characters,menu)
 
         update_inventory(new_menu)
-
+        print("NO-REFUNDS")
         tax = round(add_tax(price), 2)
         deposit = find_deposit(characters, menu)
         new_cost = tax + price + deposit
-        print("That\'ll Be:\n Brand: {}\n Character: {}\n Time: {}hr\n Deposit: {}\n Price: {}\n Tax: {}\n Total: {:.2f}".format(brand, characters, int(time), deposit, price, tax, new_cost))
+        print("\tThat\'ll Be:\n Brand: {}\n Character: {}\n Time: {}hr\n Deposit: {}\n Price: {}\n Tax: {}\n Total: {:.2f}".format(brand, characters, int(time), deposit, price, tax, new_cost))
         log_rental(characters, time, new_cost)
     
     elif decision.strip().title() == 'Returning'.strip().title():

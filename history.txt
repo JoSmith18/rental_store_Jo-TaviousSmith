@@ -2,3 +2,11 @@ Character, Time, Total
 Cinderella, 3, 165.45
 IronMan, 15:57:50, -43.0
 Hulk, 10:15:48, -46.0
+Cinderella, 4, 213.60
+SpongeBob, 10:58:55, -44.0
+Squidward, 3, 344.95
+IronMan, 2, 224.90
+Patrick, 4, 442.60
+SnowWhite, 3, 130.35
+SpongeBob, 2, 279.40
+Cinderella, 2, 117.30

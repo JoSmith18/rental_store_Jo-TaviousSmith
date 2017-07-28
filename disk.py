@@ -19,7 +19,7 @@ def update_inventory(menu):
 
 def log_rental(Characters, time, total):
     with open("history.txt", "a") as history:
-        history.write('\n{}, {}hr, {:.2f}'.format(Characters, time, total))
+        history.write('\n{}, {}, {:.2f}'.format(Characters, int(time), total))
 
 def log_return(character, deposit):
     with open("history.txt", "a") as history:
