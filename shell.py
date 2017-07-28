@@ -1,6 +1,31 @@
 from disk import *
 from core import *
 
+def return_character(menu,brand):
+        selection = give_brand(menu, brand)
+        while True:
+            characters = input("{}\nWhat Character Will You Be Returning?\n".format(selection))
+            for item in menu:
+                if characters == item["Character"]:
+                    return characters    
+            print("Invalid Character!!")
+
+def return_brand(menu):
+    while True:
+        print(selection_of_brand(menu))
+        brand = input("\nWhat Brand Is Your Character From?\n")
+        valid_brand = selection_of_brand(menu)
+        if verify_brand(valid_brand, brand):
+            return brand
+        else:
+            print("Invalid Brand")
+
+def true_name():
+        while True:
+            name = input("Hello, What Is Your Name For Security Purposes\n")
+            if valid_name(name):
+                return name
+
 def true_brand(menu):
     while True:
         print(selection_of_brand(menu))
@@ -67,13 +92,16 @@ def customer_main():
         tax = round(add_tax(price), 2)
         deposit = find_deposit(characters, menu)
         new_cost = tax + price + deposit
-        print("\tThat\'ll Be:\n Brand: {}\n Character: {}\n Time: {}hr\n Deposit: {}\n Price: {}\n Tax: {}\n Total: {:.2f}".format(brand, characters, int(time), deposit, price, tax, new_cost))
+        print("\tThat\'ll Be:\n Brand: {}\n\t_____\n Character: {}\n\t_____\n Time: {}hr\n Deposit: {}\n Price: {}\n Tax: {}\n Total: {:.2f}".format(brand, characters, int(time), deposit, price, tax, new_cost))
         log_rental(characters, time, new_cost)
     
     elif decision.strip().title() == 'Returning'.strip().title():
-        character = input("\nWhat Character Are You Returning?\n")
         
         menu = loadinventory()
+
+        brand = return_brand(menu)
+
+        character = return_character(menu, brand)
         
         new_menu = add_into_stock(character,menu)
         
@@ -86,8 +114,8 @@ def customer_main():
         print('\nThank You Please Rent With Us Again!')
         log_return(character, deposit)
 def employee_main():
-    name = input("Hello, What Is Your Name For Security Purposes\n")
-
+    
+    name = true_name()
     actions = input("\nWhat Action Would You Like To Take:\n 1. All Transaction History\n 2. Restock\n 3. Character Transaction History\n 4. Total Revenue\n")
 
     if actions.strip() == '1'.strip():
@@ -118,6 +146,10 @@ def employee_main():
     elif actions.strip() == '4'.strip():
         history = load_history()
         print(find_revenue(history))
+    
+    else:
+        print("Sorry Start Over")
+        employee_main()
     
 
 

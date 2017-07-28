@@ -10,7 +10,7 @@ def give_brand(menu, brand):
     characters = ''
     for item in menu:
         if item["Brand"] == brand and item["Stock"] >= 1:
-            characters += ('Character: {}, Deposit: {}, Price: {:.2f}\n'.format(item["Character"], (item["Value"] * .10), item["Price"]))
+            characters += ('\tCharacter: {}, Deposit: {}, Price: {:.2f}\n'.format(item["Character"], (item["Value"] * .10), item["Price"]))
     return characters
 
 def selection_of_brand(menu):
@@ -148,6 +148,11 @@ def find_revenue(history):
     for items in history:
         values.append(items["Total"])
     return sum(values)
+
+def valid_name(name):
+    return name.strip().isalpha()
+        
+    
         
         
 

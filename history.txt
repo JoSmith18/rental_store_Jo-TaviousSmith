@@ -10,3 +10,13 @@ Patrick, 4, 442.60
 SnowWhite, 3, 130.35
 SpongeBob, 2, 279.40
 Cinderella, 2, 117.30
+Cinderella, 1, 69.15
+SpongeBob, 2, 279.40
+Hulk, 2, 238.60
+MinnieMouse, 3, 192.50
+Cinderella, 4, 213.60
+Hulk, 15:54:52, -46.0
+MinnieMouse, 16:09:30, -32.0
+Hulk, 16:19:26, -46.0
+SpiderMan, 16:21:59, -38.0
+Hulk, 16:23:23, -46.0
