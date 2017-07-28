@@ -38,6 +38,6 @@ def load_history():
     loaded = []
     for item in history:
         Character, Time, Total = item.strip().split(', ')
-        dictionary = {key_1: Character, key_2: int(Time), key_3: float(Total)}
+        dictionary = {key_1: Character, key_2: (Time), key_3: float(Total)}
         loaded.append(dictionary)
     return loaded 

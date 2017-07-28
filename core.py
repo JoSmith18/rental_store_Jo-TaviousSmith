@@ -136,6 +136,20 @@ def restock_character(character, menu, num):
             item["Stock"] += int(num)
     return menu
 
+def find_revenue(history):
+    """ [{}] -> float
+    Takes history and Return the sum of the totals
+    >>> find_revenue([{'Character': 'IronMan', 'Time': 3, 'Total': 165.45},{'Character': 'IronMan', 'Time': 3, 'Total': -165.45}])
+    0.0
+    >>> find_revenue([{'Character': 'IronMan', 'Time': 3, 'Total': 165.45}])
+    165.45
+    """
+    values=[]
+    for items in history:
+        values.append(items["Total"])
+    return sum(values)
+        
+        
 
 
       

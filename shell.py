@@ -88,7 +88,7 @@ def customer_main():
 def employee_main():
     name = input("Hello, What Is Your Name For Security Purposes\n")
 
-    actions = input("\nWhat Action Would You Like To Take:\n 1. All Transaction History\n 2. Restock\n 3. Character Transaction History\n")
+    actions = input("\nWhat Action Would You Like To Take:\n 1. All Transaction History\n 2. Restock\n 3. Character Transaction History\n 4. Total Revenue\n")
 
     if actions.strip() == '1'.strip():
         
@@ -115,6 +115,9 @@ def employee_main():
         history = load_history()
         
         print(get_history(character,history))
+    elif actions.strip() == '4'.strip():
+        history = load_history()
+        print(find_revenue(history))
     
 
 
@@ -124,6 +127,8 @@ def main():
         employee_main()
     elif choice.strip().title() == "Customer".strip().title():
         customer_main()
+    else:
+        main()
 
 
      

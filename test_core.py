@@ -30,3 +30,6 @@ def test_restock_character():
 
 def test_get_history():
     assert get_history('IronMan', [{'Character': 'IronMan', 'Time': 3, 'Total': 335.50}]) == [{'Character': 'IronMan', 'Time': 3, 'Total': 335.50}]
+
+def test_find_revenue():
+    assert find_revenue([{'Character': 'IronMan', 'Time': 3, 'Total': 165.45},{'Character': 'IronMan', 'Time': 3, 'Total': 165.45}]) == 330.90
