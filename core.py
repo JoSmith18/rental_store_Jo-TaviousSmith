@@ -59,7 +59,7 @@ def get_history(character, history):
 
 def add_tax(price):
     """ int -> float
-    Takes a price and returns the sum
+    Takes a price and returns the multiplication
     of that int * .07
     >>> add_tax(1)
     0.07
@@ -97,7 +97,7 @@ def verify_brand(validbrand, brand):
 def find_deposit(characters,menu):
     """ (str,[{}]) -> float
     Look for characters in menu and 
-    Return the sum of values and .10
+    Return the multiplication of values and .10
     >>> find_deposit('IronMan',[{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 430}])
     43.0
     >>> find_deposit('IronMan',[{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 0}])

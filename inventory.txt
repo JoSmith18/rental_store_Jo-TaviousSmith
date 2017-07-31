@@ -4,7 +4,7 @@ Marvel, Hulk, 15, 90.00, 9, 460.00
 Marvel, IronMan, 8, 85.00, 4, 430.00
 Disney, MickeyMouse, 7, 65.00, 4, 380.00
 Disney, MinnieMouse, 6, 50.00, 3, 320.00
-Disney, Cinderella, 16, 45.00, 7, 210.00
+Disney, Cinderella, 17, 45.00, 7, 210.00
 Disney, SnowWhite, 5, 35.00, 1, 180.00
 Nickelodeon, SpongeBob, 7, 110.00, 4, 440.00
 Nickelodeon, Patrick, 6, 95.00, 3, 360.00

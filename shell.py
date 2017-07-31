@@ -4,7 +4,7 @@ from core import *
 def return_character(menu,brand):
         selection = give_brand(menu, brand)
         while True:
-            characters = input("{}\nWhat Character Will You Be Returning?\n".format(selection))
+            characters = input("{}\nWhat Character Will You Be Returning?\n".format(selection)).title()
             for item in menu:
                 if characters == item["Character"]:
                     return characters    
@@ -13,7 +13,7 @@ def return_character(menu,brand):
 def return_brand(menu):
     while True:
         print(selection_of_brand(menu))
-        brand = input("\nWhat Brand Is Your Character From?\n")
+        brand = input("\nWhat Brand Is Your Character From?\n").title
         valid_brand = selection_of_brand(menu)
         if verify_brand(valid_brand, brand):
             return brand
@@ -29,7 +29,7 @@ def true_name():
 def true_brand(menu):
     while True:
         print(selection_of_brand(menu))
-        brand = input('What Brand Would You Like To Choose From?\n\n')
+        brand = input('What Brand Would You Like To Choose From?\n\n').title()
         valid_brand = (selection_of_brand(menu))
         if verify_brand(valid_brand, brand):
             return brand
@@ -38,7 +38,7 @@ def true_brand(menu):
 def true_character(menu,brand):
     while True:
         selection = give_brand(menu, brand)
-        characters = input('\n\tWhat Character Would You Like?\n{}\t*Price Per Hour*\n'.format(selection))
+        characters = input('\n\tWhat Character Would You Like?\n{}\t*Price Per Hour*\n'.format(selection)).title()
         for item in menu:
             if characters == item["Character"]:
                 return characters
@@ -145,7 +145,7 @@ def employee_main():
         print(get_history(character,history))
     elif actions.strip() == '4'.strip():
         history = load_history()
-        print(find_revenue(history))
+        print(round(find_revenue(history), 2))
     
     else:
         print("Sorry Start Over")
@@ -160,6 +160,7 @@ def main():
     elif choice.strip().title() == "Customer".strip().title():
         customer_main()
     else:
+        print("Invalid Choice")
         main()
 
 
