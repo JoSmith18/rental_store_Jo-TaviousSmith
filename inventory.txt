@@ -1,6 +1,6 @@
 Brand, Character, Stock, Price, Rented, Value
 Marvel, SpiderMan, 12, 85.00, 1, 380.00
-Marvel, Hulk, 27, 90.00, 9, 460.00
+Marvel, Hulk, 28, 90.00, 9, 460.00
 Marvel, IronMan, 20, 85.00, 4, 430.00
 Disney, MickeyMouse, 7, 65.00, 4, 380.00
 Disney, MinnieMouse, 7, 50.00, 3, 320.00

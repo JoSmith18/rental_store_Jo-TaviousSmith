@@ -24,3 +24,4 @@ Cinderella, 08:31:24, -21.0
 Patrick, 2, 239.30
 Cinderella, 11:31:05, -21.0
 MinnieMouse, 11:33:41, -32.0
+Hulk, 12:50:23, -46.0

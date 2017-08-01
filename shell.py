@@ -2,15 +2,26 @@ from disk import *
 from core import *
 
 def return_character(menu,brand):
-        selection = give_brand(menu, brand)
-        while True:
-            characters = input("{}\nWhat Character Will You Be Returning?\n".format(selection))
-            for item in menu:
-                if characters == item["Character"]:
-                    return characters    
-            print("Invalid Character!!")
+    """ [{}], '' -> 
+    Takes brand and menu and return the 
+    character if given a valid brand
+    >>> return_character([{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 430}],'Marvel')
+    'IronMan'
+    """
+    selection = give_brand(menu, brand)
+    while True:
+        characters = input("{}\nWhat Character Will You Be Returning?\n".format(selection))
+        for item in menu:
+            if characters == item["Character"]:
+                return characters    
+    print("Invalid Character!!")
 
 def return_brand(menu):
+    """ [{}] -> ''
+    Takes in a menu and if 
+    given valid brand
+    returns brand
+    """
     while True:
         print(selection_of_brand(menu))
         brand = input("\nWhat Brand Is Your Character From?\n").title()
@@ -21,12 +32,19 @@ def return_brand(menu):
         print("Invalid Brand")
 
 def true_name():
-        while True:
-            name = input("Hello, What Is Your Name For Security Purposes\n")
-            if valid_name(name):
-                return name
+    """ -> ''
+    Return name if valid without numbers
+    """
+    while True:
+        name = input("Hello, What Is Your Name For Security Purposes\n")
+        if valid_name(name):
+            return name
 
 def true_brand(menu):
+    """ [{}] -> ''
+    Takes in menu and return
+    brand when given valid response
+    """
     while True:
         print(selection_of_brand(menu))
         brand = input('What Brand Would You Like To Choose From?\n\n').title()
@@ -36,6 +54,11 @@ def true_brand(menu):
         else:
             print('Invalid Brand')
 def true_character(menu,brand):
+    """([{}],'')->''
+    Takes in a menu and brand
+    and return characters when
+    given valid answer
+    """
     while True:
         selection = give_brand(menu, brand)
         characters = input('\n\tWhat Character Would You Like?\n{}\t*Price Per Hour*\n'.format(selection)).title()
@@ -60,6 +83,9 @@ def valid_time():
         else:
             print("We Can\'t Allow That Time, Pick Another One")
 def valid_decision():
+    """ -> ''
+    Returns a valid decision
+    """
     while True:
         decision = input("\tAre You:\nRenting or Returning?\n")
         if decision.strip().title() == 'Renting'.strip().title() or decision.strip().title() == 'Returning'.strip().title():
