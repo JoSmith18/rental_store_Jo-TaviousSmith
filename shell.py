@@ -4,7 +4,7 @@ from core import *
 def return_character(menu,brand):
         selection = give_brand(menu, brand)
         while True:
-            characters = input("{}\nWhat Character Will You Be Returning?\n".format(selection)).title()
+            characters = input("{}\nWhat Character Will You Be Returning?\n".format(selection))
             for item in menu:
                 if characters == item["Character"]:
                     return characters    
@@ -13,12 +13,12 @@ def return_character(menu,brand):
 def return_brand(menu):
     while True:
         print(selection_of_brand(menu))
-        brand = input("\nWhat Brand Is Your Character From?\n").title
+        brand = input("\nWhat Brand Is Your Character From?\n").title()
         valid_brand = selection_of_brand(menu)
         if verify_brand(valid_brand, brand):
             return brand
-        else:
-            print("Invalid Brand")
+    else:
+        print("Invalid Brand")
 
 def true_name():
         while True:
@@ -123,12 +123,16 @@ def employee_main():
         print(open_history())
    
     elif actions.strip() == '2'.strip():
-        
-        character = input("What Character Would You Like To Restock?\n")
-        
+
         menu = loadinventory()
-        
-        num = int(input("How Many Will You Add\n"))
+
+        brand = return_brand(menu)
+
+        selection = give_character(menu, brand)
+
+        character = input("\n{}\nWhat Character Would You Like To Restock?\n".format(selection))
+            
+        num = int(input("\nHow Many Will You Add\n"))
 
         new_menu = restock_character(character, menu, num)
         
@@ -137,8 +141,14 @@ def employee_main():
         print("The Action Was Completed")
     
     elif actions.strip() == '3'.strip():
+
+        menu = loadinventory()
+
+        brand = return_brand(menu)
+
+        selection = give_character(menu, brand)
         
-        character = input("What Character Would You Like To Look Up?\n")
+        character = input("\n{}\nWhat Character Would You Like To Look Up?\n".format(selection))
         
         history = load_history()
         

@@ -3,7 +3,7 @@ def give_brand(menu, brand):
     Takes in menu and brand and return a string 
     of the characters of that brand in menu
     >>> give_brand([{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 430}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Sold': 0}], 'Marvel')
-    'Character: IronMan, Deposit: 43.0, Price: 85.00\\n'
+    '\\tCharacter: IronMan, Deposit: 43.0, Price: 85.00\\n'
     >>> give_brand([{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 430}, {'Brand': 'Marvel', 'Character': 'Hulk', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 430}], 'Disney')
     ''
     """
@@ -11,6 +11,19 @@ def give_brand(menu, brand):
     for item in menu:
         if item["Brand"] == brand and item["Stock"] >= 1:
             characters += ('\tCharacter: {}, Deposit: {}, Price: {:.2f}\n'.format(item["Character"], (item["Value"] * .10), item["Price"]))
+    return characters
+
+def give_character(menu, brand):
+    """ [{}], '' -> ''
+    Takes in menu and brand and return a string 
+    of the characters of that brand in menu
+    >>> give_character([{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 430}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Sold': 0}], 'Disney')
+    'daffy\\n'
+    """
+    characters = ''
+    for item in menu:
+        if item["Brand"] == brand:
+            characters += ('{}\n'.format(item["Character"]))
     return characters
 
 def selection_of_brand(menu):

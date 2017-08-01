@@ -37,3 +37,6 @@ def test_find_revenue():
 def test_valid_name():
     assert valid_name('John') == True
     assert valid_name('Andre3000') == False 
+
+def test_give_character():
+    assert give_character([{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 430}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Sold': 0}], 'Disney') == 'daffy\n'
