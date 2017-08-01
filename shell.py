@@ -164,14 +164,16 @@ def employee_main():
 
 
 def main():
-    choice = input("Are You an Employee or Customer?\n")
-    if choice.strip().title() == "Employee".strip().title():
-        employee_main()
-    elif choice.strip().title() == "Customer".strip().title():
-        customer_main()
-    else:
-        print("Invalid Choice")
-        main()
+    while True:
+        choice = input("Are You an Employee or Customer?\n")
+        if choice.strip().title() == "Employee".strip().title():
+            employee_main()
+            exit()
+        elif choice.strip().title() == "Customer".strip().title():
+            customer_main()
+            exit()
+        else:
+            print("Invalid Choice")
 
 
      
