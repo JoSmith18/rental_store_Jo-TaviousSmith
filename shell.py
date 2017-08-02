@@ -10,7 +10,7 @@ def return_character(menu,brand):
     """
     selection = give_character(menu, brand)
     while True:
-        characters = input("\n{}\nWhat Character Will You Be Returning?\n".format(selection))
+        characters = input("\n{}\n*Exact Spelling*\nWhat Character Will You Be Returning?\n".format(selection))
         for item in menu:
             if characters == item["Character"]:
                 return characters    
@@ -62,7 +62,7 @@ def true_character(menu,brand):
     """
     while True:
         selection = give_brand(menu, brand)
-        characters = input('\n\tWhat Character Would You Like?\n{}\t*Price Per Hour*\n'.format(selection))
+        characters = input('\n\tWhat Character Would You Like?\n{}\t\t\t Exact Spelling\n\t\t\t*Price Per Hour*\n'.format(selection))
         for item in menu:
             if characters == item["Character"]:
                 return characters

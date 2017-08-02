@@ -37,3 +37,6 @@ Sandy, 4, 470.00
 Sandy, 09:53:56, -42.0
 Captain America, 09:54:24, -37.5
 Snow White, 09:54:40, -20.0
+SpongeBob, 1, 161.70
+Snow White, 2, 105.60
+MinnieMouse, 11:26:47, -32.0
