@@ -25,3 +25,7 @@ Patrick, 2, 239.30
 Cinderella, 11:31:05, -21.0
 MinnieMouse, 11:33:41, -32.0
 Hulk, 12:50:23, -46.0
+SpongeBob, 3, 397.10
+SpongeBob, 09:08:01, -44.0
+Cinderella, 09:11:10, -21.0
+MinnieMouse, 09:11:57, -32.0

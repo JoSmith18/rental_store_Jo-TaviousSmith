@@ -39,6 +39,7 @@ def selection_of_brand(menu):
         brand.add(item["Brand"])
     return brand
 
+
 def add_rental_fee(time,characters,menu):
     """ (int,str,[{}]) -> int
     Takes a int, str, and list of dict

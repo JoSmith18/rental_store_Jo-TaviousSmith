@@ -8,7 +8,7 @@ def return_character(menu,brand):
     >>> return_character([{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 430}],'Marvel')
     'IronMan'
     """
-    selection = give_brand(menu, brand)
+    selection = give_character(menu, brand)
     while True:
         characters = input("{}\nWhat Character Will You Be Returning?\n".format(selection))
         for item in menu:
@@ -61,7 +61,7 @@ def true_character(menu,brand):
     """
     while True:
         selection = give_brand(menu, brand)
-        characters = input('\n\tWhat Character Would You Like?\n{}\t*Price Per Hour*\n'.format(selection)).title()
+        characters = input('\n\tWhat Character Would You Like?\n{}\t*Price Per Hour*\n'.format(selection))
         for item in menu:
             if characters == item["Character"]:
                 return characters
