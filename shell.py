@@ -69,6 +69,10 @@ def true_character(menu,brand):
             print('Invalid Character')
 
 def valid_time():
+    """ None -> int
+    Until valid time is given keep asking
+    when valid response given return response
+    """
     times = ''' Our Times Are:
      \t1. 1hr
 \t2. 2hr
@@ -114,11 +118,17 @@ def customer_main():
         new_menu = change_inventory(characters,menu)
 
         update_inventory(new_menu)
+        
         print("NO-REFUNDS")
+        
         tax = round(add_tax(price), 2)
+        
         deposit = find_deposit(characters, menu)
+        
         new_cost = tax + price + deposit
+        
         print("\tThat\'ll Be:\n Brand: {}\n\t_____\n Character: {}\n\t_____\n Time: {}hr\n Deposit: {}\n Price: {}\n Tax: {}\n Total: {:.2f}".format(brand, characters, int(time), deposit, price, tax, new_cost))
+        
         log_rental(characters, time, new_cost)
     
     elif decision.strip().title() == 'Returning'.strip().title():
@@ -138,7 +148,9 @@ def customer_main():
         print("You\'re deposit was {:.2f} here is it back".format(deposit))
 
         print('\nThank You Please Rent With Us Again!')
+        
         log_return(character, deposit)
+
 def employee_main():
     
     name = true_name()
@@ -179,6 +191,7 @@ def employee_main():
         history = load_history()
         
         print(get_history(character,history))
+    
     elif actions.strip() == '4'.strip():
         history = load_history()
         print(round(find_revenue(history), 2))
@@ -186,8 +199,6 @@ def employee_main():
     else:
         print("Sorry Start Over")
         employee_main()
-    
-
 
 def main():
     while True:
@@ -200,9 +211,6 @@ def main():
             exit()
         else:
             print("Invalid Choice")
-
-
-     
 
 if __name__ == '__main__':
     main()
