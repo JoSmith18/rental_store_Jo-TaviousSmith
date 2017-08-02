@@ -10,11 +10,12 @@ def return_character(menu,brand):
     """
     selection = give_character(menu, brand)
     while True:
-        characters = input("{}\nWhat Character Will You Be Returning?\n".format(selection))
+        characters = input("\n{}\nWhat Character Will You Be Returning?\n".format(selection))
         for item in menu:
             if characters == item["Character"]:
                 return characters    
-    print("Invalid Character!!")
+    else:
+        print("Invalid Character!!")
 
 def return_brand(menu):
     """ [{}] -> ''

@@ -29,3 +29,11 @@ SpongeBob, 3, 397.10
 SpongeBob, 09:08:01, -44.0
 Cinderella, 09:11:10, -21.0
 MinnieMouse, 09:11:57, -32.0
+MinnieMouse, 09:48:31, -32.0
+MickeyMouse, 09:49:16, -38.0
+Captain America, 3, 342.45
+Snow White, 3, 148.40
+Sandy, 4, 470.00
+Sandy, 09:53:56, -42.0
+Captain America, 09:54:24, -37.5
+Snow White, 09:54:40, -20.0
