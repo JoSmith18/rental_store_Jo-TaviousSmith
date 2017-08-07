@@ -30,14 +30,14 @@ def selection_of_brand(menu):
     """ [{}] -> set('')
     Takes in the menu and return a set of brands in the menu
     >>> selection_of_brand([{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 430}])
-    {'Marvel'}
-    >>> selection_of_brand([{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 430}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Sold': 0}]) == {'Marvel', 'Disney'}
-    True
+    'Marvel'
+    >>> selection_of_brand([{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 430}, {'Brand': 'Disney', 'Character': 'daffy', 'Stock': 4, 'Price': 85.00, 'Sold': 0}]) == 'Marvel-Disney'
+    False
     """
     brand = set()
     for item in menu:
         brand.add(item["Brand"])
-    return brand
+    return '-'.join(brand)
 
 
 def add_rental_fee(time,characters,menu):
@@ -60,14 +60,14 @@ def get_history(character, history):
     Takes in a str and list of dict
     and returns the log of that str
     >>> get_history('IronMan',[{'Character': 'IronMan', 'Time': 3, 'Total': 165.45}]) == [{'Character': 'IronMan', 'Time': 3, 'Total': 165.45}]
-    True
+    False
     >>> get_history('Cinderella',[{'Character': 'IronMan', 'Time': 3, 'Total': 165.45}])
-    []
+    ''
     """
-    character_history = []
+    character_history = ''
     for item in history:
-        if character == item["Character"] :
-            character_history.append(item)
+        if character == item["Character"]:
+            character_history  += ('Character: {} - Time: {} - Total: {:.2f}\n'.format(item["Character"], item["Time"], item["Total"]))
     return character_history
 
 
