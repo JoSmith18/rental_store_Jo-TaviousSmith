@@ -42,3 +42,4 @@ Snow White, 2, 105.60
 MinnieMouse, 11:26:47, -32.0
 Hulk, 2, 238.60
 Hulk, 11:21:44, -46.0
+MickeyMouse, 1, 107.55

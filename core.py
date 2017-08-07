@@ -37,7 +37,7 @@ def selection_of_brand(menu):
     brand = set()
     for item in menu:
         brand.add(item["Brand"])
-    return '-'.join(brand)
+    return '-'.join(sorted(brand))
 
 
 def add_rental_fee(time,characters,menu):
