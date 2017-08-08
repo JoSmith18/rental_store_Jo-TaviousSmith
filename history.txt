@@ -43,3 +43,6 @@ MinnieMouse, 11:26:47, -32.0
 Hulk, 2, 238.60
 Hulk, 11:21:44, -46.0
 MickeyMouse, 1, 107.55
+Patrick, 2, 239.30
+Sandy, 08:44:53, -42.0
+Patrick, 08:45:33, -36.0

@@ -1,5 +1,5 @@
-from disk import *
-from core import *
+import disk
+import core
 
 def return_character(menu,brand):
     """ [{}], '' -> 
@@ -8,7 +8,7 @@ def return_character(menu,brand):
     >>> return_character([{'Brand': 'Marvel', 'Character': 'IronMan', 'Stock': 4, 'Price': 85.00, 'Rented': 0, 'Value': 430}],'Marvel')
     'IronMan'
     """
-    selection = give_character(menu, brand)
+    selection = core.give_character(menu, brand)
     while True:
         characters = input("\n{}\n*Exact Spelling*\nWhat Character Will You Be Returning?\n".format(selection))
         for item in menu:
@@ -24,10 +24,10 @@ def return_brand(menu):
     returns brand
     """
     while True:
-        print(selection_of_brand(menu))
+        print(core.selection_of_brand(menu))
         brand = input("\nWhat Brand Is Your Character From?\n").title()
-        valid_brand = selection_of_brand(menu)
-        if verify_brand(valid_brand, brand):
+        valid_brand = core.selection_of_brand(menu)
+        if core.verify_brand(valid_brand, brand):
             return brand
     else:
         print("Invalid Brand")
@@ -38,7 +38,7 @@ def true_name():
     """
     while True:
         name = input("Hello, What Is Your Name For Security Purposes\n")
-        if valid_name(name):
+        if core.valid_name(name):
             return name
 
 def true_brand(menu):
@@ -47,10 +47,10 @@ def true_brand(menu):
     brand when given valid response
     """
     while True:
-        print(selection_of_brand(menu))
+        print(core.selection_of_brand(menu))
         brand = input('What Brand Would You Like To Choose From?\n\n').title()
-        valid_brand = (selection_of_brand(menu))
-        if verify_brand(valid_brand, brand):
+        valid_brand = (core.selection_of_brand(menu))
+        if core.verify_brand(valid_brand, brand):
             return brand
         else:
             print('Invalid Brand')
@@ -61,7 +61,7 @@ def true_character(menu,brand):
     given valid answer
     """
     while True:
-        selection = give_brand(menu, brand)
+        selection = core.give_brand(menu, brand)
         characters = input('\n\tWhat Character Would You Like?\n{}\t\t\t Exact Spelling\n\t\t\t*Price Per Hour*\n'.format(selection))
         for item in menu:
             if characters == item["Character"]:
@@ -106,7 +106,7 @@ def customer_main():
     
     if decision.strip().title() == 'Renting'.strip().title():
 
-        menu = loadinventory()
+        menu = disk.loadinventory()
     
         brand = true_brand(menu)
 
@@ -114,43 +114,43 @@ def customer_main():
 
         time = valid_time()
 
-        price = add_rental_fee(time, characters, menu)
+        price = core.add_rental_fee(time, characters, menu)
         
-        new_menu = change_inventory(characters,menu)
+        new_menu = core.change_inventory(characters,menu)
 
-        update_inventory(new_menu)
+        disk.update_inventory(new_menu)
         
         print("NO-REFUNDS")
         
-        tax = round(add_tax(price), 2)
+        tax = round(core.add_tax(price), 2)
         
-        deposit = find_deposit(characters, menu)
+        deposit = core.find_deposit(characters, menu)
         
         new_cost = tax + price + deposit
         
         print("\tThat\'ll Be:\n Brand: {}\n\t_____\n Character: {}\n\t_____\n Time: {}hr\n Deposit: {}\n Price: {}\n Tax: {}\n Total: {:.2f}".format(brand, characters, int(time), deposit, price, tax, new_cost))
         
-        log_rental(characters, time, new_cost)
+        disk.log_rental(characters, time, new_cost)
     
     elif decision.strip().title() == 'Returning'.strip().title():
         
-        menu = loadinventory()
+        menu = disk.loadinventory()
 
         brand = return_brand(menu)
 
         character = return_character(menu, brand)
         
-        new_menu = add_into_stock(character,menu)
+        new_menu = core.add_into_stock(character,menu)
         
-        update_inventory(new_menu)
+        disk.update_inventory(new_menu)
         
-        deposit = find_deposit(character, menu)
+        deposit = core.find_deposit(character, menu)
         
         print("You\'re deposit was {:.2f} here is it back".format(deposit))
 
         print('\nThank You Please Rent With Us Again!')
         
-        log_return(character, deposit)
+        disk.log_return(character, deposit)
 
 def employee_main():
     
@@ -159,43 +159,43 @@ def employee_main():
 
     if actions.strip() == '1'.strip():
         
-        print(open_history())
+        print(disk.open_history())
    
     elif actions.strip() == '2'.strip():
 
-        menu = loadinventory()
+        menu = disk.loadinventory()
 
         brand = return_brand(menu)
 
-        selection = give_character(menu, brand)
+        selection = core.give_character(menu, brand)
 
         character = input("\n{}\nWhat Character Would You Like To Restock?\n".format(selection))
             
         num = int(input("\nHow Many Will You Add\n"))
 
-        new_menu = restock_character(character, menu, num)
+        new_menu = core.restock_character(character, menu, num)
         
-        update_inventory(new_menu)
+        disk.update_inventory(new_menu)
         
         print("The Action Was Completed")
     
     elif actions.strip() == '3'.strip():
 
-        menu = loadinventory()
+        menu = disk.loadinventory()
 
         brand = return_brand(menu)
 
-        selection = give_character(menu, brand)
+        selection = core.give_character(menu, brand)
         
         character = input("\n{}\nWhat Character Would You Like To Look Up?\n".format(selection))
         
-        history = load_history()
+        history = disk.load_history()
         
-        print(get_history(character,history))
+        print(core.get_history(character,history))
     
     elif actions.strip() == '4'.strip():
-        history = load_history()
-        print(round(find_revenue(history), 2))
+        history = disk.load_history()
+        print(round(core.find_revenue(history), 2))
     
     else:
         print("Sorry Start Over")
